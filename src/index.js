@@ -22,7 +22,7 @@ class NoSleep {
       this._addSourceToVideo(this.noSleepVideo, 'mp4', mp4)
 
       this.noSleepVideo.addEventListener('loadedmetadata', () => {
-        if (this.noSleepVideo.duration <= 1) { // webm source
+        if (this.noSleepVideo.currentSrc.includes('video/webm')) {
           this.noSleepVideo.setAttribute('loop', '')
         } else { // mp4 source
           this.noSleepVideo.addEventListener('timeupdate', () => {
